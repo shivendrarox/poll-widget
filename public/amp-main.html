@@ -1,0 +1,81 @@
+<!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js" async></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+
+    .border-black {
+      border-color: black;
+      border-width: 3px;
+      border-style: solid;
+    }
+    .booked{
+      background-color: red;
+    }
+    .not_booked{
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <amp-state id="slotData">
+    <script type="application/json">
+      {
+      
+       "slot_selected":"x",
+       "nc":"abc"
+      }
+    </script>
+  </amp-state>
+
+  <form id="myForm" method="post" action-xhr="https://localhost:5000/form" on="submit-success:slotList.refresh;submit-error:slotList.refresh">
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input name="name" type="text" name="name" required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input name="id" type="email" name="email" required>
+      </label>
+      <br>
+      <label >
+        <span>slot:</span>
+            <textarea name="slot"  [text]="slotData.slot_selected" class="" style="height: 15px;width: 50px;margin-top: 10px;"></textarea>
+      </label>
+      <br>
+      <input type="submit" value="Book a slot">
+    </fieldset>
+    <br>
+
+    <amp-list id="slotList" width="auto" height="100" layout="fixed-height" src="https://localhost:5000/slotdata">
+      <template type="amp-mustache">
+
+        <div tabindex="{{title}}" id="btn{{title}}" on="tap:AMP.setState({slotData:{slot_selected:  {{title}}  }}),slotList.refresh,btn{{title}}.toggleClass(class=border-black)"  role="button" style="width:100px;height:50px;margin-top:10px;text-align: center;padding-top: 10px;color: seashell;font-size: larger;" class="{{bkd}}">
+          {{title}}
+        </div>
+       
+      </template>
+    </amp-list>
+
+    <br>
+    <div submit-success>
+      <template type="amp-mustache">
+        successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+         error!
+      </template>
+    </div>
+  </form>
+</body>
+</html>
