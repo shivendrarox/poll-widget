@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
@@ -51,16 +52,27 @@
     -->
     <form method="post" action-xhr="https://localhost:5000/formsubmit">
       <div class="m1" id="step1">
-        <p>How would you rate this year's conference?</p>
+        <amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="https://localhost:5000/test/"
+>
+  <template type="amp-mustache">
 
-        <button type="button" id="rating1" name="rating" value="1" on="tap:step2.show,step1.hide" >Facebook</button>
-        <!-- <label for="rating1">Great</label> -->
+    <button type="submit" name="rating" value="{{val}}" on="tap:step1.hide" >{{name}}</button>
+
+  </template>
+</amp-list>
+
+        <!-- <button type="button" id="rating1" name="rating" value="1" on="tap:step2.show,step1.hide" >Facebook</button>
+        <label for="rating1">Great</label>
 
         <button type="button" id="rating2" name="rating" value="1" on="tap:step2.show,step1.hide">Twitter</button>
-        <!-- <label for="rating2">Not bad</label> -->
+        <label for="rating2">Not bad</label>
 
         <button type="button" id="rating3" name="rating" value="1" on="tap:step2.show,step1.hide">IG</button>
-        <!-- <label for="rating3">Meh</label> -->
+        <label for="rating3">Meh</label> -->
 
       </div>
       <div class="m1" id="step2" hidden>

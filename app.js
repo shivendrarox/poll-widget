@@ -84,6 +84,31 @@ app.get("/data", (req, res) => {
   // });
 });
 
+app.get("/test", (req, res) => {
+
+  res.json({
+    items: [
+      {
+        val: "0",
+        name:"Facebook"
+      },
+      {
+
+        val: "1",
+        name:"Twitter"
+
+      },
+      {
+
+        val: "2",
+        name:"Instagram"
+
+      },
+
+    ],
+  });
+});
+
 app.get("/close", function (req, res) {
 
 });
