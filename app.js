@@ -110,6 +110,25 @@ app.get("/close", function (req, res) {
 // });
 //
 
+app.post('/formsubmit', async (req, res) => {
+  // const { emailIdentifier, campaignId } = req.params;
+  // const { formId } = req.query;
+  // const campaignEmailsDao = new CampaignEmailsDao(campaignId);
+  return res.send({
+    result: [
+      {
+        itemValue: '70%',
+      },
+      {
+        itemValue: '20%',
+      },
+      {
+        itemValue: '10%',
+      },
+    ],
+  });
+});
+
 
 ///////////////
 server.listen(port, () =>

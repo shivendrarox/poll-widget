@@ -49,7 +49,7 @@
 
       When the form is submitted, we display a short confirmation message to the user by using `<div submit-success>`.
     -->
-    <form method="post" action-xhr="https://amp.dev/documentation/examples/api/submit-form-input-text-xhr">
+    <form method="post" action-xhr="https://localhost:5000/formsubmit">
       <div class="m1" id="step1">
         <p>How would you rate this year's conference?</p>
 
@@ -73,6 +73,27 @@
 
       <div class="m1" submit-success>
         Thank you for submitting feedback.
+        <template type="amp-mustache">
+          {{#result}}
+          <div
+            style="
+              display: flex;
+              padding: 15px;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div
+              style="
+                width: {{itemValue}};
+                background: grey;
+                height: 24px;
+              "
+            ></div>
+            <div>{{itemValue}}</div>
+          </div>
+          {{/result}}
+          </template>
       </div>
     </form>
   </div>
