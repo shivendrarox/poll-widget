@@ -34,12 +34,14 @@
       display: flex;
       flex-direction: row;
       opacity: 0.94;
+      background-color: #44946e;
     }
     .hero-left-block{
-      background-color: #44946e;
+      background-color:transparent;
       width: 50%;
       padding: 1rem;
       color: #ffffff;
+      align-self: center;
     }
     .hero-right-block{
       background-color: #313435;
@@ -99,8 +101,19 @@
   <div class="container">
 
       <div class="hero-block">
-        <div class="hero-left-block">Your Opinion Matters</div>
-        <div class="hero-right-block">right</div>
+        <div class="hero-left-block">
+            Your Opinion Matters
+        </div>
+        <div class="hero-right-block">
+              <amp-img
+              alt="Poll Icon"
+              src="https://www.clipartmax.com/png/small/236-2365236_bar-graph-clipart-black-and-white-bar-chart-black-and-white.png"
+              width="410"
+              height="410"
+              layout="responsive"
+            >
+            </amp-img>
+        </div>
       </div>
 
 <div class="space"></div>
