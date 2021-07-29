@@ -29,13 +29,33 @@
     label {
       margin-bottom: 0.5em;
     }
+    .hero-block{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    .hero-left-block{
+      background-color: #44946e;
+      width: 50%;
+      padding: 1rem;
+      color: #ffffff;
+    }
+    .hero-right-block{
+      background-color: #313435;
+      width: 50%;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
 
     <div>
-      <amp-img class="m1" width="600" height="314" layout="responsive" src="https://amp.dev/static/img/sharing/default-600x314.png"></amp-img>
+      <div class="hero-block">
+        <div class="hero-left-block">Your Opinion Matters</div>
+        <div class="hero-right-block">right</div>
+      </div>
+
       <p>It’s been a busy few days at the latest AMP conference. We hope you had a good time!</p>
     </div>
 
