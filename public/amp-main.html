@@ -78,6 +78,7 @@
       background-color: #ededed;
       width: 100%;
       text-align: center;
+      padding: 1rem;
     }
     .footer-block-link{
       text-decoration: none;
@@ -94,10 +95,10 @@
       </div>
 
 <div class="space"></div>
+<h2 class="question">Question</h2>
 
     <form method="post" action-xhr="https://localhost:5000/formsubmit">
       <div class="m1" id="step1">
-        <h2 class="question">Question</h2>
         <amp-list
   width="auto"
   height="140"
@@ -128,7 +129,6 @@
 
 
       <div class="m1" submit-success>
-        Thank you for submitting feedback.
         <template type="amp-mustache">
           {{#result}}
           <div
