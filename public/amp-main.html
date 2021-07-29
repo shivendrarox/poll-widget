@@ -33,9 +33,7 @@
 </head>
 <body>
   <div class="container">
-    <!--
-      The main content of the email, an image and a short description of the event.
-    -->
+
     <div>
       <amp-img class="m1" width="600" height="314" layout="responsive" src="https://amp.dev/static/img/sharing/default-600x314.png"></amp-img>
       <p>It’s been a busy few days at the latest AMP conference. We hope you had a good time!</p>
@@ -43,13 +41,7 @@
 
     <hr>
 
-    <!--
-      To make the survey, we use an `amp-form` with radio button input fields.
 
-      The second step of the form, free text input, is hidden initially and gets displayed after the user selects a rating, as this triggers a `change` event.
-
-      When the form is submitted, we display a short confirmation message to the user by using `<div submit-success>`.
-    -->
     <form method="post" action-xhr="https://localhost:5000/formsubmit">
       <div class="m1" id="step1">
         <amp-list
