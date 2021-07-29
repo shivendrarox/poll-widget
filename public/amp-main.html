@@ -33,6 +33,7 @@
       width: 100%;
       display: flex;
       flex-direction: row;
+      opacity: 0.94;
     }
     .hero-left-block{
       background-color: #44946e;
@@ -47,6 +48,7 @@
     }
     .question{
       text-align: center;
+      opacity: 0.94;
     }
     form{
       background-color: #ffff;
@@ -54,6 +56,23 @@
     .space{
       width: 100%;
       height: 1rem;
+    }
+    .button-container{
+      display: flex;
+      flex-direction: row;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    .option-button{
+      flex-basis: 100%;
+      margin-bottom: 1rem;
+      width: 100%;
+      border: 1px solid #38cb97;
+      background-color: transparent;
+      color: #38cb97;
+      opacity: 0.84;
+      padding:0.5rem;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -77,8 +96,11 @@
   src="https://localhost:5000/test/"
 >
   <template type="amp-mustache">
+    <div class="button-container">
+      <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide,step2.show" >{{name}}</button>
 
-    <button type="submit" name="rating" value="{{val}}" on="tap:step1.hide,step2.show" >{{name}}</button>
+    </div>
+
 
   </template>
 </amp-list>
