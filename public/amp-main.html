@@ -67,8 +67,8 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 25px;
-      padding-left: 10%;
-      padding-right: 10%;
+      /* padding-left: 10%;
+      padding-right: 10%; */
     }
     form{
       background-color: #ffff;
@@ -80,8 +80,8 @@
     .button-container{
       display: flex;
       flex-direction: row;
-      padding-left: 10%;
-      padding-right: 10%;
+      /* padding-left: 10%;
+      padding-right: 10%; */
     }
     .option-button{
       flex-basis: 100%;
@@ -121,16 +121,20 @@
       text-align:left;
       padding-bottom:17px;
       color: #42cd9d;
-      padding-left: 10%;
-      padding-right: 10%;
+      /* padding-left: 10%;
+      padding-right: 10%; */
     }
     .error-message{
       color:red;
       text-align: center;
-      padding-left: 10%;
-      padding-right: 10%;
+      /* padding-left: 10%;
+      padding-right: 10%; */
     }
     .submit-success-container{
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    .options-container{
       padding-left: 10%;
       padding-right: 10%;
     }
@@ -155,87 +159,90 @@
       </div>
 
 <div class="space"></div>
-<h2 class="question">Which social media platform you use the most?</h2>
 
     <form method="post" action-xhr="https://localhost:5000/formsubmit">
-      <div class="m1" id="step1">
-        <amp-list
-  width="auto"
-  height="240"
-  layout="fixed-height"
-  src="https://localhost:5000/test/"
->
-  <template type="amp-mustache">
-    <div class="button-container">
-      <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide;" >{{name}}</button>
+      <div class="options-container">
+        <h2 class="question">Which social media platform you use the most?</h2>
 
-    </div>
-
-
-  </template>
-</amp-list>
-
-        <!-- <button type="button" id="rating1" name="rating" value="1" on="tap:step2.show,step1.hide" >Facebook</button>
-        <label for="rating1">Great</label>
-
-        <button type="button" id="rating2" name="rating" value="1" on="tap:step2.show,step1.hide">Twitter</button>
-        <label for="rating2">Not bad</label>
-
-        <button type="button" id="rating3" name="rating" value="1" on="tap:step2.show,step1.hide">IG</button>
-        <label for="rating3">Meh</label> -->
-
+        <div class="m1" id="step1">
+          <amp-list
+    width="auto"
+    height="240"
+    layout="fixed-height"
+    src="https://localhost:5000/test/"
+  >
+    <template type="amp-mustache">
+      <div class="button-container">
+        <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide;" >{{name}}</button>
+  
       </div>
-
-
-
-      <div submitting >
-
-        <div class="placeholder-item">
-          <div>Loading...</div>
+  
+  
+    </template>
+  </amp-list>
+  
+          <!-- <button type="button" id="rating1" name="rating" value="1" on="tap:step2.show,step1.hide" >Facebook</button>
+          <label for="rating1">Great</label>
+  
+          <button type="button" id="rating2" name="rating" value="1" on="tap:step2.show,step1.hide">Twitter</button>
+          <label for="rating2">Not bad</label>
+  
+          <button type="button" id="rating3" name="rating" value="1" on="tap:step2.show,step1.hide">IG</button>
+          <label for="rating3">Meh</label> -->
+  
         </div>
-
-        <div class="placeholder-item">
-          <div>Loading...</div>
+  
+  
+        <div submitting >
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
         </div>
-
-        <div class="placeholder-item">
-          <div>Loading...</div>
-        </div>
-
-      </div>
-
-      <div class="m1 submit-success-container"  submit-success>
-        <template type="amp-mustache">
-          {{#result}}
-          <div
-            style="
-              position: relative;
-              justify-content: space-between;
-              align-items: center;
-              border: 0.5px solid #ededed;
-            "
-          >
+  
+        <div class="m1 submit-success-container"  submit-success>
+          <template type="amp-mustache">
+            {{#result}}
             <div
               style="
-                width: {{itemValue}};
-                background: #d9f5eb;
-                padding-top:17px;
-                text-align:left;
-                padding-left:10px;
-                padding-bottom:17px;
-                color: #42cd9d;
-                font-weight:700;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+                border: 0.5px solid #ededed;
               "
-            >{{itemName}}</div>
-            <span class="bar-percentage">{{itemValue}}</span>
-
-          </div>
-
-          <br/>
-          {{/result}}
-          <p class="total-votes">{{totalCount}} Votes</p>
-          </template>
+            >
+              <div
+                style="
+                  width: {{itemValue}};
+                  background: #d9f5eb;
+                  padding-top:17px;
+                  text-align:left;
+                  padding-left:10px;
+                  padding-bottom:17px;
+                  color: #42cd9d;
+                  font-weight:700;
+                "
+              >{{itemName}}</div>
+              <span class="bar-percentage">{{itemValue}}</span>
+  
+            </div>
+  
+            <br/>
+            {{/result}}
+            <p class="total-votes">{{totalCount}} Votes</p>
+            </template>
+        </div>
       </div>
+
 
 
       <div submit-error>
