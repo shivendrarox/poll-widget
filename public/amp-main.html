@@ -84,6 +84,11 @@
       text-decoration: none;
       color: #707070;
     }
+    .bar-percentage{
+      position: absolute;
+      top: 10px;
+      left: 92%;
+    }
   </style>
 </head>
 <body>
@@ -133,10 +138,10 @@
           {{#result}}
           <div
             style="
-              display: flex;
+              position: relative;
               justify-content: space-between;
               align-items: center;
-              border: 1px solid #ededed;
+              border: 0.5px solid #ededed;
             "
           >
             <div
@@ -146,11 +151,13 @@
                 height: 34px;
               "
             ></div>
-            <div>{{itemValue}}</div>
+            <span class="bar-percentage">{{itemValue}}</span>
+
           </div>
+
           <br/>
           {{/result}}
-          <p>{{totalCount}}</p>
+          <p class="total-votes">{{totalCount}}</p>
           </template>
       </div>
 
