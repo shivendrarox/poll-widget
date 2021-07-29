@@ -60,7 +60,7 @@
 >
   <template type="amp-mustache">
 
-    <button type="submit" name="rating" value="{{val}}" on="tap:step1.hide" >{{name}}</button>
+    <button type="submit" name="rating" value="{{val}}" on="tap:step1.hide,step2.show" >{{name}}</button>
 
   </template>
 </amp-list>
@@ -75,12 +75,7 @@
         <label for="rating3">Meh</label> -->
 
       </div>
-      <div class="m1" id="step2" hidden>
-        <label class="block" for="info">2nd part</label>
 
-        <input type="submit" value="Send feedback">
-        <input type="reset" value="Clear">
-      </div>
 
 
       <div class="m1" submit-success>
@@ -106,6 +101,21 @@
           </div>
           {{/result}}
           </template>
+      </div>
+
+      <div class="m1" id="step2" hidden>
+        <amp-list
+        width="auto"
+        height="100"
+        layout="fixed-height"
+        src="https://localhost:5000/total-votes/"
+      >
+        <template type="amp-mustache">
+      
+          <p>{{count}}</p>
+      
+        </template>
+      </amp-list>
       </div>
     </form>
   </div>

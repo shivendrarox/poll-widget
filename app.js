@@ -109,6 +109,19 @@ app.get("/test", (req, res) => {
   });
 });
 
+
+app.get("/total-votes", (req, res) => {
+
+  res.json({
+    items: [
+      {
+        count: "count value",
+      },
+
+    ],
+  });
+});
+
 app.get("/close", function (req, res) {
 
 });
