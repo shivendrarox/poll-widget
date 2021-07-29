@@ -86,7 +86,7 @@
     .option-button{
       width: 100%;
       /* flex-basis: 100%; */
-      margin-bottom: 1rem;
+      /* margin-bottom: 1rem; */
       font-size: 14px;
       /* width: 100%; */
       border: 1px solid #38cb97;
@@ -173,16 +173,16 @@
         <div class="m1" id="step1">
           <amp-list
     width="auto"
-    height="180"
+    height="215"
     layout="fixed-height"
     src="https://localhost:5000/test/"
   >
     <template type="amp-mustache">
       <div class="button-container">
         <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide;" >{{name}}</button>
-  
       </div>
-  
+      <br/>
+
   
     </template>
   </amp-list>
@@ -225,6 +225,7 @@
                 align-items: center;
                 border: 0.5px solid #ededed;
                 width: 100%;
+                border-radius: 2px;
 
               "
             >
