@@ -95,6 +95,20 @@
       color:#a4a4a4;
       font-weight: bold;
     }
+    .placeholder-item{
+      padding-top:17px;
+      text-align:left;
+      padding-bottom:17px;
+      color: #42cd9d;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    .error-message{
+      color:red;
+      text-align: center;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
   </style>
 </head>
 <body>
@@ -150,6 +164,22 @@
 
 
 
+      <div submitting >
+
+        <div class="placeholder-item">
+          <div>Loading...</div>
+        </div>
+
+        <div class="placeholder-item">
+          <div>Loading...</div>
+        </div>
+
+        <div class="placeholder-item">
+          <div>Loading...</div>
+        </div>
+
+      </div>
+
       <div class="m1" submit-success>
         <template type="amp-mustache">
           {{#result}}
@@ -169,6 +199,7 @@
                 text-align:left;
                 padding-left:10px;
                 padding-bottom:17px;
+                color: #42cd9d;
               "
             >{{itemName}}</div>
             <span class="bar-percentage">{{itemValue}}</span>
@@ -179,6 +210,13 @@
           {{/result}}
           <p class="total-votes">{{totalCount}} Votes</p>
           </template>
+      </div>
+
+
+      <div submit-error>
+        <template type="amp-mustache">
+         <p class="error-message">Oops! {{name}}, {{message}}.</p> 
+        </template>
       </div>
 
       <div class="m1 footer-block" >
