@@ -154,15 +154,18 @@ app.post('/formsubmit', async (req, res) => {
   // const campaignEmailsDao = new CampaignEmailsDao(campaignId);
   return res.send({
     totalCount:"80",
-    
+
     result: [
       {
+        itemName:"Facebook",
         itemValue: '70%',
       },
       {
+        itemName:"Twitter",
         itemValue: '20%',
       },
       {
+        itemName:"Instagram",
         itemValue: '10%',
       },
     ],

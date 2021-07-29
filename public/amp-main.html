@@ -76,7 +76,7 @@
     }
     .footer-block{
       background-color: #ededed;
-      width: 100%;
+      /* width: 100%; */
       text-align: center;
       padding: 1rem;
     }
@@ -86,7 +86,7 @@
     }
     .bar-percentage{
       position: absolute;
-      top: 10px;
+      top: 18px;
       left: 92%;
     }
     .total-votes{
@@ -152,9 +152,12 @@
               style="
                 width: {{itemValue}};
                 background: #d9f5eb;
-                height: 34px;
+                padding-top:17px;
+                text-align:left;
+                padding-left:10px;
+                padding-bottom:17px;
               "
-            ></div>
+            >{{itemName}}</div>
             <span class="bar-percentage">{{itemValue}}</span>
 
           </div>
