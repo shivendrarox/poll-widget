@@ -87,6 +87,8 @@
       opacity: 0.84;
       padding:0.5rem;
       cursor: pointer;
+      padding-bottom: 14px;
+      padding-top: 14px;
     }
     .footer-block{
       background-color: #ededed;
@@ -122,6 +124,10 @@
       padding-left: 10%;
       padding-right: 10%;
     }
+    .submit-success-container{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
   </style>
 </head>
 <body>
@@ -149,7 +155,7 @@
       <div class="m1" id="step1">
         <amp-list
   width="auto"
-  height="140"
+  height="240"
   layout="fixed-height"
   src="https://localhost:5000/test/"
 >
@@ -192,7 +198,7 @@
 
       </div>
 
-      <div class="m1" submit-success>
+      <div class="m1 submit-success-container"  submit-success>
         <template type="amp-mustache">
           {{#result}}
           <div
