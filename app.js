@@ -90,19 +90,29 @@ app.get("/test", (req, res) => {
     items: [
       {
         val: "0",
-        name:"Facebook"
+        name:"Facebook",
+        showButtonStyle:"none",
+        showResultStyle:"block",
+        itemName:"Facebook",
+        itemValue: '70%',
       },
       {
 
         val: "1",
-        name:"Twitter"
-
+        name:"Twitter",
+        showButtonStyle:"none",
+        showResultStyle:"block",
+        itemName:"Twitter",
+        itemValue: '20%',      
       },
       {
 
         val: "2",
-        name:"Instagram"
-
+        name:"Instagram",
+        showButtonStyle:"none",
+        showResultStyle:"block",
+        itemName:"Instagram",
+        itemValue: '10%',
       },
 
     ],

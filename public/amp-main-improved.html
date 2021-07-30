@@ -178,9 +178,37 @@
     src="https://localhost:5000/test/"
   >
     <template type="amp-mustache">
-      <div class="button-container">
+      <div style="display: {{showButtonStyle}};" class="button-container">
         <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide;" >{{name}}</button>
       </div>
+
+      <div
+      style="
+      display: {{showResultStyle}};
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        border: 0.5px solid #ededed;
+        width: 100%;
+        border-radius: 2px;
+      "
+    >
+      <div
+        style="
+          width: {{itemValue}};
+          background: #d9f5eb;
+          padding-top:12px;
+          text-align:left;
+          padding-left:12px;
+          padding-bottom:12px;
+          color: #42cd9d;
+          font-size:14px;
+          font-weight:700;
+        "
+      >{{itemName}}</div>
+      <span class="bar-percentage">{{itemValue}}</span>
+
+    </div>
       <br/>
 
   
