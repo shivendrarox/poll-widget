@@ -1,0 +1,270 @@
+
+<!doctype html>
+<html ⚡4email lang="en" data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+    }
+
+    .m1 {
+      margin: 1em 0;
+    }
+
+    label {
+      margin-bottom: 0.5em;
+    }
+    .hero-block{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      opacity: 0.94;
+      background-color: #44946e;
+
+    }
+    .hero-left-block{
+      background-color:transparent;
+      width: 50%;
+      padding: 1rem;
+      color: #ffffff;
+      align-self: center;
+
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 2.7rem;
+
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .hero-right-block{
+      background-color: #313435;
+      width: 50%;
+      padding: 1rem;
+
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .question{
+      text-align: left;
+      opacity: 0.94;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    form{
+      background-color: #ffff;
+    }
+    .space{
+      /* width: 100%; */
+      height: 1rem;
+    }
+    .button-container{
+      display: flex;
+      flex-direction: row;
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    .option-button{
+      width: 100%;
+      /* flex-basis: 100%; */
+      /* margin-bottom: 1rem; */
+      font-size: 14px;
+      /* width: 100%; */
+      border: 1px solid #38cb97;
+      background-color: transparent;
+      color: #38cb97;
+      opacity: 0.84;
+      padding:0.5rem;
+      cursor: pointer;
+      padding-bottom: 12px;
+      padding-top: 12px;
+      font-weight: 700;
+      border-radius: 2px;
+    }
+    .footer-block{
+      background-color: #ededed;
+      /* width: 100%; */
+      text-align: center;
+      padding: 1rem;
+    }
+    .footer-block-link{
+      text-decoration: none;
+      color: #707070;
+    }
+    .bar-percentage{
+      position: absolute;
+      top: 12px;
+      left: 90%;
+      font-weight:700;
+    }
+    .total-votes{
+      color:#a4a4a4;
+      font-weight: bold;
+    }
+    .placeholder-item{
+      padding-top:17px;
+      text-align:left;
+      padding-bottom:17px;
+      color: #42cd9d;
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    .error-message{
+      color:red;
+      text-align: center;
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    .submit-success-container{
+      /* padding-left: 10%;
+      padding-right: 10%; */
+    }
+    .options-container{
+      /* padding-left: 10%;
+      padding-right: 10%; */
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+      <div class="hero-block">
+        <div class="hero-left-block">
+            Your Opinion Matters
+        </div>
+        <div class="hero-right-block">
+              <!-- <amp-img
+              alt="Poll Icon"
+              src="https://www.clipartmax.com/png/small/236-2365236_bar-graph-clipart-black-and-white-bar-chart-black-and-white.png"
+              width="110"
+              height="110"
+            >
+            </amp-img> -->
+        </div>
+      </div>
+
+<div class="space"></div>
+
+    <form method="post" action-xhr="https://localhost:5000/formsubmit">
+      <div class="options-container">
+        <h2 class="question">Which social media platform you use the most?</h2>
+
+        <div class="m1" id="step1">
+          <amp-list
+    width="auto"
+    height="215"
+    layout="fixed-height"
+    src="https://localhost:5000/test/"
+  >
+    <template type="amp-mustache">
+      <div class="button-container">
+        <button class="option-button" type="submit" name="rating" value="{{val}}" on="tap:step1.hide;" >{{name}}</button>
+      </div>
+      <br/>
+
+  
+    </template>
+  </amp-list>
+  
+          <!-- <button type="button" id="rating1" name="rating" value="1" on="tap:step2.show,step1.hide" >Facebook</button>
+          <label for="rating1">Great</label>
+  
+          <button type="button" id="rating2" name="rating" value="1" on="tap:step2.show,step1.hide">Twitter</button>
+          <label for="rating2">Not bad</label>
+  
+          <button type="button" id="rating3" name="rating" value="1" on="tap:step2.show,step1.hide">IG</button>
+          <label for="rating3">Meh</label> -->
+  
+        </div>
+  
+  
+        <div submitting >
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
+          <div class="placeholder-item">
+            <div>Loading...</div>
+          </div>
+  
+        </div>
+  
+        <div class="m1 submit-success-container"  submit-success>
+          <template type="amp-mustache">
+            {{#result}}
+            <div
+              style="
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+                border: 0.5px solid #ededed;
+                width: 100%;
+                border-radius: 2px;
+
+              "
+            >
+              <div
+                style="
+                  width: {{itemValue}};
+                  background: #d9f5eb;
+                  padding-top:12px;
+                  text-align:left;
+                  padding-left:12px;
+                  padding-bottom:12px;
+                  color: #42cd9d;
+                  font-size:14px;
+                  font-weight:700;
+                "
+              >{{itemName}}</div>
+              <span class="bar-percentage">{{itemValue}}</span>
+  
+            </div>
+  
+            <br/>
+            {{/result}}
+            <p class="total-votes">{{totalCount}} Votes</p>
+            </template>
+        </div>
+      </div>
+
+
+
+      <div submit-error>
+        <template type="amp-mustache">
+         <p class="error-message">Oops! {{name}}, {{message}}.</p> 
+        </template>
+      </div>
+
+      <div class="m1 footer-block" >
+        <a class="footer-block-link" href="https://www.google.com">Visit our website</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
