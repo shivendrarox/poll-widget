@@ -34,7 +34,7 @@ const requestOptions = {
 
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "./public/amp-main.html"));
+  res.sendFile(path.join(__dirname, "./public/amp-main-improved.html"));
   console.log("showing mail");
   //res.end();
 });
